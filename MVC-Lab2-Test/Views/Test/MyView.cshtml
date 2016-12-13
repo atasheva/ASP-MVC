@@ -1,0 +1,93 @@
+﻿@using MVC_Lab2_Test.ViewModels
+@model MVC_Lab2_Test.ViewModels.EmployeeListViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyView</title>
+</head>
+<body>
+    @*<div> 
+        @{
+            MVC_Lab2_Test.Models.Employee emp = (MVC_Lab2_Test.Models.Employee)
+                ViewData["Employee"];
+        }
+
+        <b>Employee Details </b><br />
+        Employee Name : @emp.FirstName @emp.LastName <br />
+        Employee Salary: @emp.Salary.ToString("C")
+
+
+    </div>*@
+    @*<div>
+        @{
+            MVC_Lab2_Test.Models.Employee emp = (MVC_Lab2_Test.Models.Employee)
+                ViewBag.Employee;
+        }
+        Employee Details
+        <br />
+        Employee Name: @emp.FirstName @emp.LastName
+        <br />
+        Employee Salary: @emp.Salary.ToString("C")
+
+
+    </div>*@
+    @*<div>
+        <b>Employee Details</b>
+        <br />
+        Employee Name : @Model.FirstName @Model.LastName
+        <br />
+        @if (Model.Salary > 15000)
+        {
+            <span style="background-color:yellow">
+                Employee Salary: @Model.Salary.ToString("C")
+            </span>
+        }
+        else
+        {
+            <span style="background-color:green">
+
+                Employee Salary: @Model.Salary.ToString("C")
+            </span>
+        }
+
+    </div>*@
+    @*<div>
+        Hello @Model.UserName
+        <hr />
+        <div>
+            <b>Employee Details</b><br />
+            Employee Name : @Model.EmployeeName <br />
+            <span style="background-color:@Model.SalaryColor">
+                Employee Salary: @Model.Salary
+            </span>
+        </div>
+
+    </div>*@
+    <div>
+        Hello @Model.UserName
+        <hr />
+        <div>
+            <table>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Salary</th>
+                </tr>
+                @foreach (EmployeeViewModel item in Model.Employees)
+            {
+                    <tr>
+                        <td>@item.EmployeeName</td>
+                        <td style="background-color:@item.SalaryColor">@item.Salary</td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
